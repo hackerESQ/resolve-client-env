@@ -42,7 +42,7 @@ Add variables to your .env file in your Laravel project root. Be sure to prefix 
 
 You can also use the .env expansion feature and reference existing variables, like so: `VUE_APP_NAME="${APP_NAME}"`. That way you won't have to duplicate existing variables.
 
-This variable is now accessible in your process.env.VUE_APP_NAME. 
+This variable is now accessible in Vue through the `process.env.VUE_APP_NAME` variable. 
 
 ## Configure
 
