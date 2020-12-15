@@ -8,7 +8,7 @@ I use this small module to load the .env file from my Laravel project into a Vue
 
 1. **Create /utils/resolveClientEnv.js**
 
-Copy the resolveClientEnv.js file into your Vue CLU project somwhere. These instructions assume you put this file in ./utils/resolveClientEnv.js
+Copy the resolveClientEnv.js file into your Vue CLI project somwhere. These instructions assume you put this file in ./utils/resolveClientEnv.js
 
 2. **Update vue.config.js**
 
@@ -21,7 +21,7 @@ and add the following to the end of your module.export array:
 ```
 chainWebpack: config => {
      config
-      .plugin('define')
+      .plugin('define')       // Overwrites the existing Vue CLI 'define' plugin
         .use(
           webpack.DefinePlugin, [
             resolveClientEnv()
