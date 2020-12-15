@@ -42,6 +42,8 @@ Add variables to your .env file in your Laravel project root. Be sure to prefix 
 
 You can also use the .env expansion feature and reference existing variables, like so: `VUE_APP_NAME="${APP_NAME}"`. That way you won't have to duplicate existing variables.
 
+This variable is now accessible in your process.env.VUE_APP_NAME. 
+
 ## Configure
 
 You can pass options to the resolveClientEnv() function. Here are the available options with their defaults:
