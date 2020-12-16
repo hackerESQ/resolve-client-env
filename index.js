@@ -1,5 +1,6 @@
 const path = require('path');  
-const dotenv = require('dotenv-webpack')
+const dotenv = require('dotenv');
+const dotenvExpand = require('dotenv-expand')
 
 module.exports = function resolveClientEnv (options) {
 
@@ -13,28 +14,23 @@ module.exports = function resolveClientEnv (options) {
     options = { ...defaults, ...options };
 
     // get laravel env file
-    const LaravelENVs = new dotenv({
-        path: path.join(process.cwd(), options.env_path) ,
-        expand: options.expand,
-    })
+    const LaravelENVs = new dotenv.config({
+        path: path.join(process.cwd(), options.env_path)
+    });
 
-    // clean up LaravelENVs (removes 'process.env' from key)
-    Object.keys(LaravelENVs.definitions).forEach(key => {
-        var newkey = key.replace(/^process.env.\b/,"");
-        
-        LaravelENVs.definitions[newkey] = LaravelENVs.definitions[key];
-
-        delete LaravelENVs.definitions[key];
-    })
+    if (options.expand) {
+        dotenvExpand(LaravelENVs);
+    }
 
     // populates ENV array 
     const env = {}
-    Object.keys(LaravelENVs.definitions).forEach(key => {
+    Object.keys(LaravelENVs.parsed).forEach(key => {
         // only fetches ENVs that meet prefix requirement
         if (options.prefixRE.test(key) || key === 'NODE_ENV') {
-            env[key] = LaravelENVs.definitions[key]
+            env[key] = LaravelENVs.parsed[key]
         }
     })
+
     env.BASE_URL = JSON.stringify(options.base_url);
     env.NODE_ENV = JSON.stringify(process.env.NODE_ENV);
 
