@@ -5,6 +5,7 @@
   "author": "hackerESQ",
   "main": "index.js",
   "dependencies": {
-    "dotenv-webpack": "^6.0.0"
+    "dotenv": "^6.0.0",
+    "dotenv-expand": "^5.1.0"
   }
 }
