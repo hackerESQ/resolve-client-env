@@ -8,7 +8,13 @@ I use this small module to load the .env file from my Laravel project into a Vue
 
 1. **Install package**
 
-run `npm install git+https://github.com/hackerESQ/resolve-client-env.git` to install this package
+run `npm install git+https://github.com/hackerESQ/resolve-client-env.git --save` to install this package
+
+or you can add:
+
+`"resolve-client-env": "github:hackerESQ/resolve-client-env",`
+
+to your package.json dependencies.
 
 2. **Update vue.config.js**
 
