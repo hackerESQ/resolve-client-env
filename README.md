@@ -6,9 +6,9 @@ I use this small module to load the .env file from my Laravel project into a Vue
 
 ## Install
 
-1. **Create /utils/resolveClientEnv.js**
+1. **Install package**
 
-Copy the resolveClientEnv.js file into your Vue CLI project somwhere. These instructions assume you put this file in ./utils/resolveClientEnv.js
+run `npm install git+https://github.com/hackerESQ/resolve-client-env.git` to install this package
 
 2. **Update vue.config.js**
 
@@ -29,12 +29,6 @@ chainWebpack: config => {
         )
   }
 ```
-
-3. Install dotenv-webpack
-
-run the following to install dotenv-webpack:
-
-`npm i dotenv-webpack --save-dev`
 
 ## Use
 
