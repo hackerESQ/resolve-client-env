@@ -1,0 +1,10 @@
+{
+  "name": "resolve-client-env",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "entry-point": "index.js",
+  "dependencies": {
+    "dotenv-webpack": "^6.0.0"
+  }
+}
