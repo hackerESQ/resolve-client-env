@@ -57,10 +57,3 @@ You can pass options to the resolveClientEnv() function. Here are the available 
 }
 ```
 
-## Future steps
-
-* package this into an installable NPM or YARN package.
-
-
-
-
