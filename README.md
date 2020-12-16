@@ -20,7 +20,7 @@ to your package.json dependencies.
 
 Add the following line to the top of your vue.config.js file:
 
-`const resolveClientEnv = require('./utils/resolveClientEnv')`
+`const resolveClientEnv = require('resolve-client-env')`
 
 and add the following to the end of your module.export array:
 
