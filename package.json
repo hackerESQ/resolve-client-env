@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "author": "",
-  "entry-point": "index.js",
+  "main": "index.js",
   "dependencies": {
     "dotenv-webpack": "^6.0.0"
   }
