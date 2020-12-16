@@ -36,7 +36,7 @@ chainWebpack: config => {
   }
 ```
 
-## Use
+## Usage
 
 Add variables to your .env file in your Laravel project root. Be sure to prefix the new variables with "VUE_APP_" in order for the variables to be included in your Vue CLI project. Example: `VUE_APP_NAME="Fancy App"`
 
