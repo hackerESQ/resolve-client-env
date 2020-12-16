@@ -18,6 +18,7 @@ module.exports = function resolveClientEnv (options) {
         path: path.join(process.cwd(), options.env_path)
     });
 
+    // should we expand?
     if (options.expand) {
         dotenvExpand(LaravelENVs);
     }
@@ -31,13 +32,16 @@ module.exports = function resolveClientEnv (options) {
         }
     })
 
-    env.BASE_URL = JSON.stringify(options.base_url);
-    env.NODE_ENV = JSON.stringify(process.env.NODE_ENV);
+    // sets the required vue variables
+    env.BASE_URL = options.base_url;
+    env.NODE_ENV = process.env.NODE_ENV;
 
-    // if we need to stringify
-    // for (const key in env) {
-    //   env[key] = JSON.stringify(env[key])
-    // }
+    // stringify keys so they're safe
+    for (const key in env) {
+        env[key] = JSON.stringify(env[key])
+    }
+    
+    // return env
     return {
         'process.env': env
     }
