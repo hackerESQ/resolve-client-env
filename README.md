@@ -1,5 +1,5 @@
-# resolveClientEnv
-pull in .env files from anywhere in a Vue CLI app
+# resolveClientEnv()
+overwrite the existing vue CLI `resolveClientEnv` and pull in .env files from anywhere in a Vue CLI app
 
 ## Use case
 I use this small module to load the .env file from my Laravel project into a Vue CLI 3 project, where both are in the same repo. This enables the ability to use a single .env file (as opposed to having 2 separate files).
