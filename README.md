@@ -30,7 +30,12 @@ chainWebpack: config => {
       .plugin('define')       // Overwrites the existing Vue CLI 'define' plugin
         .use(
           webpack.DefinePlugin, [
-            resolveClientEnv()
+            resolveClientEnv({
+                 env_path: '../.env',           // location of the .env file to include
+                 prefixRE: /^VUE_APP_/,         // prefix of .env variables to include
+                 expand: true,                  // expand variables
+                 base_url: '/'                  // set base url variable for Vue router
+               })
           ]
         )
   }
