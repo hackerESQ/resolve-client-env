@@ -31,10 +31,10 @@ chainWebpack: config => {
         .use(
           webpack.DefinePlugin, [
             resolveClientEnv({
-                 env_path: '../.env',           // location of the .env file to include
-                 prefixRE: /^VUE_APP_/,         // prefix of .env variables to include
-                 expand: true,                  // expand variables
-                 base_url: '/'                  // set base url variable for Vue router
+                 env_path: '../.env',          
+                 prefixRE: /^VUE_APP_/,        
+                 expand: true,        
+                 base_url: '/'            
                })
           ]
         )
