@@ -9,7 +9,8 @@ module.exports = function resolveClientEnv (options) {
         env_path: '../.env', 
         prefixRE: /^VUE_APP_/,
         expand: true,
-        base_url:'/'
+        base_url:'/',
+        loadAdditionalKeys:[]
     };
     options = { ...defaults, ...options };
 
@@ -26,8 +27,8 @@ module.exports = function resolveClientEnv (options) {
     // populates ENV array 
     const env = {}
     Object.keys(LaravelENVs.parsed).forEach(key => {
-        // only fetches ENVs that meet prefix requirement
-        if (options.prefixRE.test(key) || key === 'NODE_ENV') {
+        // only fetches ENVs that meet prefix requirement OR specifically requested
+        if (options.prefixRE.test(key) || key === 'NODE_ENV' || options.loadAdditionalKeys.includes(key)) {
             env[key] = LaravelENVs.parsed[key]
         }
     })
