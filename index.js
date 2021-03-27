@@ -15,21 +15,21 @@ module.exports = function resolveClientEnv (options) {
     options = { ...defaults, ...options };
 
     // get laravel env file
-    const LaravelENVs = new dotenv.config({
+    const clientEnv = new dotenv.config({
         path: path.join(process.cwd(), options.env_path)
     });
 
     // should we expand?
     if (options.expand) {
-        dotenvExpand(LaravelENVs);
+        dotenvExpand(clientEnv);
     }
 
     // populates ENV array 
     const env = {}
-    Object.keys(LaravelENVs.parsed).forEach(key => {
+    Object.keys(clientEnv.parsed).forEach(key => {
         // only fetches ENVs that meet prefix requirement OR specifically requested
         if (options.prefixRE.test(key) || key === 'NODE_ENV' || options.loadAdditionalKeys.includes(key)) {
-            env[key] = LaravelENVs.parsed[key]
+            env[key] = clientEnv.parsed[key]
         }
     })
 
