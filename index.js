@@ -39,7 +39,7 @@ module.exports = function resolveClientEnv (options) {
 
     // stringify keys so they're safe
     for (const key in env) {
-        env['process.env.' + key] = JSON.stringify(env[key])
+        env[key] = JSON.stringify(env[key])
     }
     
     // return env
