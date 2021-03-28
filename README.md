@@ -55,10 +55,11 @@ You can pass options to the resolveClientEnv() function. Here are the available 
 
 ```
 {
-  env_path: '../.env',           // location of the .env file to include
-  prefixRE: /^VUE_APP_/,         // prefix of .env variables to include
-  expand: true,                  // expand variables
-  base_url: '/'                  // set base url variable for Vue router
+   path: '../.env',                // location of the .env file to include
+   prefix: /^VUE_APP_/,            // prefix of .env variables to include
+   expand: true,                   // expand variables
+   baseUrl: '/',                   // set base url variable for Vue router
+   loadAdditionalKeys: []          // load any other specific keys from ENV file?
 }
 ```
 
