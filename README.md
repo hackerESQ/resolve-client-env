@@ -31,10 +31,10 @@ chainWebpack: config => {
         .use(
           webpack.DefinePlugin, [
             resolveClientEnv({
-                 env_path: '../.env',          
-                 prefixRE: /^VUE_APP_/,        
+                 path: '../.env',          
+                 prefix: /^VUE_APP_/,        
                  expand: true,        
-                 base_url: '/'            
+                 baseUrl: '/'            
                })
           ]
         )
